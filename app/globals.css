@@ -1,7 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Fuggles&display=swap");
+@import url("Home.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
-  background-color: aliceblue;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+#root {
+  height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  scrollbar-color: #ffd700 black;
+  scrollbar-width: thin;
+}
+*::selection {
+  background-color: #ffd700;
+  color: rgb(4, 4, 4);
+}
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffd700;
+}
+
+.black-background {
+  background-image: url(/black-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: -1;
+}
+.pink-background {
+  background-image: url("/side-wave_background.jpg");
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.personalize-link .arrow-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.personalize-link:hover .arrow-icon,
+.personalize-link:focus .arrow-icon {
+  opacity: 1;
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 22px;
+  }
 }
