@@ -2,12 +2,14 @@ import { FC, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import { usePathname } from "next/navigation";
 
 const Navbar: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [showArrow, setShowArrow] = useState<boolean>(false);
   const modelsListRef: React.MutableRefObject<HTMLUListElement | null> =
     useRef(null);
+  const pathname = usePathname();
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -62,8 +64,8 @@ const Navbar: FC = () => {
               onTouchStart={handleMenuClick}
               style={{
                 backgroundColor:
-                  location.pathname.includes("/rowery-meskie") ||
-                  location.pathname.includes("/rowery-damskie")
+                  pathname.includes("/rowery-meskie") ||
+                  pathname.includes("/rowery-damskie")
                     ? "#FFD700"
                     : "",
               }}
@@ -110,7 +112,7 @@ const Navbar: FC = () => {
             href="/personalizacja"
             className="text-md transition-all duration-700 text-white py-6 px-12 focus:bg-white focus:outline-none focus:text-black hover:bg-white hover:outline-none hover:text-black active:bg-white active:outline-none active:text-black"
             style={{
-              backgroundColor: location.pathname.includes("/personalizacja")
+              backgroundColor: pathname.includes("/personalizacja")
                 ? "#FFD700"
                 : "",
             }}
@@ -121,7 +123,7 @@ const Navbar: FC = () => {
             href="/kontakt"
             className="text-md transition-all duration-700 text-white py-6 px-12 focus:bg-white focus:outline-none focus:text-black hover:bg-white hover:outline-none hover:text-black active:outline-none active:text-black"
             style={{
-              backgroundColor: location.pathname.includes("/kontakt")
+              backgroundColor: pathname.includes("/kontakt")
                 ? "#FFD700"
                 : "",
             }}
