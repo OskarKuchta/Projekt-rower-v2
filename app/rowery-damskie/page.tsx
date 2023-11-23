@@ -1,11 +1,10 @@
 "use client";
-import { FC } from "react";
 import ContactSubpage from "../components/ContactSubpage";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
-const Women: FC = () => {
+const Women = () => {
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
     threshold: 1,

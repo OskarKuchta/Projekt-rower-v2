@@ -13,7 +13,6 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.18",
-    "@shinyongjun/react-fullpage": "^1.7.0",
     "framer-motion": "^10.16.5",
     "next": "14.0.3",
     "react": "^18",
