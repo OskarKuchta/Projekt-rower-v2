@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useLayoutEffect } from "react";
 import "./globals.css";
 import Head from "./head";
 import Navbar from "./components/navbar";
@@ -8,7 +8,7 @@ import MobileNavbar from "./components/mobilenavbar";
 import { useRouter } from "next/navigation";
 
 const RootLayout: React.FC<Children> = ({ children }) => {
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isPhone: boolean = windowWidth < 769;
   const router = useRouter();
 
